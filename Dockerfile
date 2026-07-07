@@ -1,6 +1,6 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/index.php
 
 COPY . .
 
