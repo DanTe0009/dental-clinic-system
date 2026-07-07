@@ -10,4 +10,6 @@ RUN chmod -R 775 storage bootstrap/cache
 
 ENV WEBROOT /var/www/html/public
 
-EXPOSE 8080
+CMD sed -i "s/listen 80;/listen ${PORT};/" /etc/nginx/conf.d/default.conf && supervisord -n
+
+EXPOSE 10000
