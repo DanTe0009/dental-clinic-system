@@ -2,9 +2,12 @@ services:
   - type: web
     name: dental-clinic-system
     runtime: docker
+    dockerfilePath: ./Dockerfile
     plan: free
     branch: main
+
     healthCheckPath: /
+
     envVars:
       - key: APP_ENV
         value: production
