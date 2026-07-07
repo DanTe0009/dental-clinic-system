@@ -12,7 +12,7 @@ ENV REAL_IP_HEADER=1
 RUN composer install --no-dev --optimize-autoloader
 RUN php artisan config:clear
 RUN php artisan route:clear
-RUN php artisan view:clear
+RUN mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cache
 RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
